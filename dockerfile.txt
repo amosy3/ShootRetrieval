@@ -1,0 +1,19 @@
+FROM febdcfb34b25
+
+EXPOSE 8888
+
+RUN pip install jupyter_contrib_nbextensions &&\
+jupyter contrib nbextension install --user &&\
+jupyter nbextension enable collapsible_headings/main &&\
+jupyter nbextension enable notify/notify &&\
+jupyter nbextension enable snippets/main &&\
+jupyter nbextension enable snippets_menu/main &&\
+jupyter nbextension enable execute_time/ExecuteTime &&\
+jupyter nbextension enable toc2/main &&\
+jupyter nbextension enable navigation-hotkeys/main
+
+RUN pip install tqdm transformers ipywidgets
+
+
+CMD bash
+
